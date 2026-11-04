@@ -1,6 +1,12 @@
 # Layered Identifier
 
-分层标识的通用底座：ID 值类型 + 目录类 + Inspector 抽屉 + 校验窗口。
+该包提供如下功能:
+
+- 基于`const string`的分层仿`enum`. 
+
+- `Inspector`内下拉菜单
+
+- `Editor`图形化编辑界面
 
 ## 结构
 
@@ -59,18 +65,28 @@ asmdef：运行时已 `autoReferenced`，ID 所在程序集无需显式引用；
 
 ## 使用
 
+图形化界面在Unity上方工具栏`Tools/GrignardReagent/Layered Id`中
+
+### 新建
+
 以`QuestId`为例:
-1. 在Unity上方工具栏`Tools/GrignardReagent/Layered Id/Generate`中添加新ID
+
+1. 在`Generate`页中添加新ID
 2. `Domain`填ID类型名, 这里填`Quest`
 3. `Runtime Folder`指定生成的运行时脚本路径, 需要在`Assets/`下. `QuestId`和`QuestIdCatalog`在此路径下
 4. `Editor Folder`指定生成的编辑器脚本路径, 负责`Inspector`下拉菜单
 
 代码里直接序列化一个 `QuestId` 字段，或使用 `QuestId.From(QuestCatalog.MainIntro)`。
 
-### 生成了什么
-1. 按上面的模板生成三个文件（或用项目工具窗口的生成器）。
-2. 在目录类加一行 `const`；新增条目不需要改任何代码分支。
-3. Inspector 路径：抽屉按 `/` 分层展示目录内容。
+### 增/删/改子标签
+
+在`Const`页中进行. 
+
+- 选中某一`LayeredId`类, 可以看到和删改该类所有成员. 
+
+- 添加成员时, `Member`填入显示名, 命名必须在域内唯一.
+
+- `Path`填入内部`const string`路径, `/`分隔路径, 指定目录树.
 
 ## 规则
 
