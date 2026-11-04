@@ -1,6 +1,6 @@
 {
   "name": "com.grignardreagent.layeredid",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "displayName": "Layered Identifier",
   "description": "Layered identifier base types, catalog, property drawer and validation window.",
   "unity": "2022.3",
