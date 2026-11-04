@@ -8,6 +8,35 @@
 
 - `Editor`图形化编辑界面
 
+## 导入
+
+通过UPM从`[Julianne-Natalie-Stingray/LayeredId](https://github.com/Julianne-Natalie-Stingray/LayeredId).git`导入
+
+## 使用
+
+图形化界面在Unity上方工具栏`Tools/GrignardReagent/Layered Id`中
+
+### 新建
+
+以`QuestId`为例:
+
+1. 在`Generate`页中添加新ID
+2. `Domain`填ID类型名, 这里填`Quest`
+3. `Runtime Folder`指定生成的运行时脚本路径, 需要在`Assets/`下. `QuestId`和`QuestIdCatalog`在此路径下
+4. `Editor Folder`指定生成的编辑器脚本路径, 负责`Inspector`下拉菜单
+
+代码里直接序列化一个 `QuestId` 字段，或使用 `QuestId.From(QuestCatalog.MainIntro)`。
+
+### 增/删/改子标签
+
+在`Const`页中进行. 
+
+- 选中某一`LayeredId`类, 可以看到和删改该类所有成员. 
+
+- 添加成员时, `Member`填入显示名, 命名必须在域内唯一.
+
+- `Path`填入内部`const string`路径, `/`分隔路径, 指定目录树.
+
 ## 结构
 
 ```text
@@ -62,31 +91,6 @@ internal sealed class QuestIdDrawer : LayeredIdDrawer
 asmdef：运行时已 `autoReferenced`，ID 所在程序集无需显式引用；
 
 抽屉所在编辑器程序集需要引用 `GrignardReagent.LayeredId.Editor`。
-
-## 使用
-
-图形化界面在Unity上方工具栏`Tools/GrignardReagent/Layered Id`中
-
-### 新建
-
-以`QuestId`为例:
-
-1. 在`Generate`页中添加新ID
-2. `Domain`填ID类型名, 这里填`Quest`
-3. `Runtime Folder`指定生成的运行时脚本路径, 需要在`Assets/`下. `QuestId`和`QuestIdCatalog`在此路径下
-4. `Editor Folder`指定生成的编辑器脚本路径, 负责`Inspector`下拉菜单
-
-代码里直接序列化一个 `QuestId` 字段，或使用 `QuestId.From(QuestCatalog.MainIntro)`。
-
-### 增/删/改子标签
-
-在`Const`页中进行. 
-
-- 选中某一`LayeredId`类, 可以看到和删改该类所有成员. 
-
-- 添加成员时, `Member`填入显示名, 命名必须在域内唯一.
-
-- `Path`填入内部`const string`路径, `/`分隔路径, 指定目录树.
 
 ## 规则
 
