@@ -10,7 +10,7 @@
 
 ## 导入
 
-通过UPM从`(https://github.com/Julianne-Natalie-Stingray/LayeredId.git`导入
+通过UPM从`https://github.com/Julianne-Natalie-Stingray/LayeredId.git`导入
 
 ## 使用
 
